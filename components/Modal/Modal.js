@@ -26,19 +26,14 @@ export default function CustomModal(props) {
     const body = (
         <div style={modalStyle} className={classes.paper}>
         <h2 id="simple-modal-title">{props.modalConfig.flowName}</h2>
-        <span>Describe your item</span>
-        {props.modalConfig.config.shortDescription && <BasicTextFields title={props.modalConfig.title}></BasicTextFields> }
-        {props.modalConfig.config.longDescription && <MultilineTextFields></MultilineTextFields>}
+        {props.modalConfig.config.shortDescription && <BasicTextFields title={props.modalConfig.shortDescription}></BasicTextFields> }
+        {props.modalConfig.config.longDescription && <MultilineTextFields shortDescription={props.modalConfig.shortDescription}></MultilineTextFields>}
         {props.modalConfig.config.date && <MaterialUIPicker></MaterialUIPicker>}
         {props.modalConfig.config.options && <RadioButtonsGroup></RadioButtonsGroup>}
         {props.modalConfig.config.checkbox && <Checkbox></Checkbox>}        
         {props.modalConfig.config.selection && <SimpleSelect></SimpleSelect>}        
-        {props.modalConfig.config.slider && <ContinuousSlider></ContinuousSlider>}                
-        <div className={classes.root}>
-        <Button variant="contained" color="primary">
-            Primary
-        </Button>
-        </div>        
+        {props.modalConfig.config.slider && <ContinuousSlider></ContinuousSlider>}  
+        {props.modalConfig.config.publish && <Button variant="contained" color="primary">Submit</Button>}                        
       </div>        
     );
     return (

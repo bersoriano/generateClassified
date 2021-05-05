@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head'
 import CustomModal from '../components/Modal/Modal';
-
+import Classified from '../components/Classified';
 export default function Home() {
   const startConfig = {
     shortDescription: true,
-    longDescription: true,
+    longDescription: false,
     date: true,
     options: true,
     checkbox: false,
@@ -15,7 +15,7 @@ export default function Home() {
   }
   const detailsConfig = {
     shortDescription: false,
-    longDescription: false,
+    longDescription: true,
     date: false,
     options: false,
     checkbox: true,
@@ -30,13 +30,14 @@ export default function Home() {
     options: false,
     checkbox: false,
     selection: true,
-    slider: true,
+    slider: false,
     publish: true    
   }    
   const [step1, setStep1] = React.useState(
     {
       flowName: "Start listing",
       title: "Sample title1",
+      shortDescription: "Describe you item",
       description: "Sample description",
       date: "18/05/2021",
       option: "Male",
@@ -49,6 +50,7 @@ export default function Home() {
     {
       flowName: "Add details",      
       title: "Sample title2",
+      shortDescription: "Describe you item",      
       description: "Sample description",
       date: "18/05/2021",
       option: "Male",
@@ -61,6 +63,7 @@ export default function Home() {
     {
       flowName: "Summary and Publish",      
       title: "Sample title2",
+      shortDescription: "Describe you item",
       description: "Sample description",
       date: "18/05/2021",
       option: "Male",
@@ -91,8 +94,19 @@ export default function Home() {
             modalConfig={step3}>
           </CustomModal>                  
         </div>
+        <Classified ></Classified>
       </main>
+
       <style jsx>{`
+        .classified {
+          border: 1px solid silver;
+          padding: 1rem 2rem;
+          margin: 2rem;
+          min-width: 30vw;
+          max-width: 40vw;
+          min-height: 30vh;
+          border-radius: 1rem;
+        }
         .modal-container {
           flex-direction: row;
           display: flex;

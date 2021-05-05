@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MultilineTextFields() {
+export default function MultilineTextFields(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState('Controlled');
 
@@ -28,7 +28,7 @@ export default function MultilineTextFields() {
           label="Multiline"
           multiline
           rows={4}
-          defaultValue="Default Value"
+          defaultValue={props.shortDescription}
           variant="outlined"
         />
       </div>
